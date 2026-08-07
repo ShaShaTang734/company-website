@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allJobs = await getCollection("jobs");
+const sortedJobs = allJobs.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout
+  title="招贤纳士 — 公司名称"
+  description="加入我们，与优秀的团队一起推动生命科学进步。"
+>
+  <section class="bg-primary text-white">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <h1 class="text-3xl md:text-4xl font-bold">招贤纳士</h1>
+    </div>
+  </section>
+
+  <!-- 人才理念 -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-text-main mb-6">人才理念</h2>
+    <div class="max-w-3xl text-text-secondary leading-relaxed space-y-4">
+      <p>
+        我们始终相信，优秀的人才是公司发展的核心动力。公司为每一位员工提供开放、包容的成长环境和具有竞争力的薪酬福利。
+      </p>
+      <p>
+        如果你热爱生命科学，渴望在创新药物的研发中实现自我价值，欢迎加入我们。
+      </p>
+    </div>
+  </section>
+
+  <!-- 岗位列表 -->
+  <section class="bg-bg-light">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold text-text-main mb-8">招聘岗位</h2>
+      {sortedJobs.length === 0 ? (
+        <p class="text-text-muted">暂无招聘岗位，请持续关注。</p>
+      ) : (
+        <div class="space-y-3">
+          {sortedJobs.map((job) => (
+            <a
+              href={`/careers/${job.id}`}
+              class="block bg-white border border-border rounded-lg p-5 hover:border-primary transition-colors"
+            >
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-semibold text-text-main">{job.data.title}</h3>
+                  <div class="flex gap-4 mt-1.5 text-sm text-text-muted">
+                    <span>{job.data.department}</span>
+                    <span>{job.data.location}</span>
+                    <span>{job.data.type}</span>
+                  </div>
+                </div>
+                <span class="text-text-muted text-sm shrink-0">
+                  {job.data.date.toISOString().slice(0, 10)}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

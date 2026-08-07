@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="公司概况 — 公司名称"
+  description="了解公司的发展历程、管理团队、企业文化和核心价值观。"
+>
+  <section class="bg-primary text-white">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <h1 class="text-3xl md:text-4xl font-bold">公司概况</h1>
+    </div>
+  </section>
+
+  <!-- 公司简介 -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-text-main mb-6">公司简介</h2>
+    <div class="max-w-3xl text-text-secondary leading-relaxed space-y-4">
+      <p>
+        公司名称成立于 XXXX 年，是一家专注于生物医药创新研发的高科技企业。公司总部位于 XX 市，拥有国际一流的研发实验室和中试生产基地。
+      </p>
+      <p>
+        公司以"创新驱动、患者至上"为核心价值观，聚焦肿瘤、自身免疫、代谢疾病等重大疾病领域，致力于开发具有全球竞争力的创新药物。
+      </p>
+    </div>
+  </section>
+
+  <!-- 发展历程 -->
+  <section class="bg-bg-light">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold text-text-main mb-8">发展历程</h2>
+      <div class="space-y-6 max-w-3xl">
+        <div class="flex gap-6">
+          <div class="text-primary font-bold text-lg w-20 shrink-0">2026</div>
+          <div class="text-text-secondary">公司某某新药获批进入临床III期试验</div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-primary font-bold text-lg w-20 shrink-0">2025</div>
+          <div class="text-text-secondary">完成新一轮融资，建立海外研发中心</div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-primary font-bold text-lg w-20 shrink-0">2023</div>
+          <div class="text-text-secondary">首个创新药获批进入临床试验</div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-primary font-bold text-lg w-20 shrink-0">2020</div>
+          <div class="text-text-secondary">公司正式成立，完成天使轮融资</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业文化 -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-text-main mb-8">企业文化</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold text-text-main mb-2">创新驱动</h3>
+        <p class="text-text-secondary leading-relaxed">
+          以科学为本，持续探索前沿技术，推动医药创新。
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-text-main mb-2">患者至上</h3>
+        <p class="text-text-secondary leading-relaxed">
+          一切以患者需求为导向，为全球患者带来希望。
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-text-main mb-2">合作共赢</h3>
+        <p class="text-text-secondary leading-relaxed">
+          开放合作，与全球伙伴共同推进生命科学进步。
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

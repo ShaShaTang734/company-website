@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allNews = await getCollection("news");
+const sortedNews = allNews.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout
+  title="新闻中心 — 公司名称"
+  description="了解公司最新动态、新闻发布和媒体报道。"
+>
+  <section class="bg-primary text-white">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <h1 class="text-3xl md:text-4xl font-bold">新闻中心</h1>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    {sortedNews.length === 0 ? (
+      <p class="text-text-muted">暂无新闻。</p>
+    ) : (
+      <div class="space-y-1">
+        {sortedNews.map((news) => (
+          <a
+            href={`/news/${news.id}`}
+            class="flex justify-between items-center py-4 border-b border-border group"
+          >
+            <div>
+              <span class="inline-block text-xs text-accent bg-bg-light px-2 py-0.5 rounded mr-3">
+                {news.data.category}
+              </span>
+              <span class="text-text-main group-hover:text-primary transition-colors">
+                {news.data.title}
+              </span>
+            </div>
+            <span class="text-text-muted text-sm shrink-0 ml-4">
+              {news.data.date.toISOString().slice(0, 10)}
+            </span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</BaseLayout>

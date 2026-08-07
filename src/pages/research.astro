@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const platforms = [
+  {
+    title: "小分子药物研发平台",
+    desc: "基于结构生物学和计算化学的理性药物设计，覆盖从靶点发现到先导化合物优化的完整流程。",
+  },
+  {
+    title: "大分子生物药平台",
+    desc: "涵盖单克隆抗体、双特异性抗体、ADC药物等的研发与工程化改造。",
+  },
+  {
+    title: "细胞与基因治疗平台",
+    desc: "专注于CAR-T、基因编辑等前沿技术，针对难治性疾病开发创新疗法。",
+  },
+];
+---
+
+<BaseLayout
+  title="科学研发 — 公司名称"
+  description="了解公司的研发平台、核心技术优势以及最新科研成果。"
+>
+  <section class="bg-primary text-white">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <h1 class="text-3xl md:text-4xl font-bold">科学研发</h1>
+    </div>
+  </section>
+
+  <!-- 研发平台 -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-text-main mb-8">研发平台</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {platforms.map((p) => (
+        <div class="border border-border rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-text-main mb-3">{p.title}</h3>
+          <p class="text-text-secondary leading-relaxed">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 技术优势 -->
+  <section class="bg-bg-light">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold text-text-main mb-8">技术优势</h2>
+      <div class="max-w-3xl space-y-4">
+        <div class="flex gap-3">
+          <span class="text-accent font-bold">01</span>
+          <div>
+            <h3 class="font-semibold text-text-main">AI辅助药物设计</h3>
+            <p class="text-text-secondary">利用人工智能加速靶点发现和分子优化，显著缩短研发周期。</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="text-accent font-bold">02</span>
+          <div>
+            <h3 class="font-semibold text-text-main">自主知识产权技术</h3>
+            <p class="text-text-secondary">拥有多项核心专利，覆盖药物筛选、CMC工艺等关键环节。</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="text-accent font-bold">03</span>
+          <div>
+            <h3 class="font-semibold text-text-main">国际化研发团队</h3>
+            <p class="text-text-secondary">核心团队来自全球顶尖药企和研究机构，具有丰富的药物开发经验。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研发成果 -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-text-main mb-8">研发成果</h2>
+    <div class="max-w-3xl text-text-secondary leading-relaxed space-y-4">
+      <p>公司目前已建立丰富的新药研发管线，多个项目处于不同临床阶段。</p>
+      <p>已申请国内外发明专利 XX 项，其中已授权 XX 项。在顶级学术期刊发表论文 XX 篇。</p>
+    </div>
+  </section>
+</BaseLayout>

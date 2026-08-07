@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const advantages = [
+  {
+    icon: "🔬",
+    title: "前沿科研平台",
+    desc: "国际领先的研发设施，覆盖药物发现全流程。",
+  },
+  {
+    icon: "💊",
+    title: "丰富产品管线",
+    desc: "多款创新药物处于不同临床阶段，覆盖重大疾病领域。",
+  },
+  {
+    icon: "🤝",
+    title: "全球合作网络",
+    desc: "与国内外顶尖科研机构和药企建立了深度合作。",
+  },
+];
+
+const recentNews = [
+  { title: "公司某某新药获批进入临床III期试验", date: "2026-07-15" },
+  { title: "公司与某某大学签署战略合作协议", date: "2026-06-28" },
+  { title: "公司获得某某投资机构新一轮融资", date: "2026-06-10" },
+];
+---
+
+<BaseLayout
+  title="公司名称 — 专注生物医药创新研发"
+  description="公司名称是一家专注于生物医药创新研发的高科技企业，致力于为全球患者提供高质量的医疗解决方案。"
+>
+  <!-- Hero -->
+  <section class="bg-primary text-white">
+    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+      <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-2xl">
+        以创新驱动生命科学进步
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/70 max-w-xl leading-relaxed">
+        专注于生物医药创新研发，致力于为全球患者提供高质量的医疗解决方案。
+      </p>
+    </div>
+  </section>
+
+  <!-- 核心优势 -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-3 gap-10">
+      {advantages.map((item) => (
+        <div>
+          <div class="text-3xl mb-4">{item.icon}</div>
+          <h3 class="text-lg font-semibold text-text-main mb-2">{item.title}</h3>
+          <p class="text-text-secondary leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 最新动态 -->
+  <section class="bg-bg-light">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <h2 class="text-2xl font-bold text-text-main mb-8">最新动态</h2>
+      <div class="space-y-1">
+        {recentNews.map((item) => (
+          <a
+            href="/news"
+            class="flex justify-between items-center py-3 border-b border-border text-text-secondary hover:text-primary transition-colors"
+          >
+            <span>{item.title}</span>
+            <span class="text-text-muted text-sm shrink-0 ml-4">{item.date}</span>
+          </a>
+        ))}
+      </div>
+      <div class="mt-6">
+        <a href="/news" class="text-sm text-accent hover:text-accent-light">
+          查看更多 →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

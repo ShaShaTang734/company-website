@@ -1,0 +1,66 @@
+---
+const navItems = [
+  { label: "公司概况", href: "/about" },
+  { label: "科学研发", href: "/research" },
+  { label: "产品管线", href: "/pipeline" },
+  { label: "新闻中心", href: "/news" },
+  { label: "对外合作", href: "/cooperation" },
+  { label: "招贤纳士", href: "/careers" },
+  { label: "联系我们", href: "/contact" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-border">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3">
+        <span class="text-xl font-bold text-primary tracking-wide">公司名称</span>
+      </a>
+
+      <!-- 桌面导航 -->
+      <nav class="hidden md:flex items-center gap-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="px-3 py-2 text-sm text-text-secondary hover:text-primary rounded transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- 移动端汉堡菜单按钮 -->
+      <button
+        id="menu-toggle"
+        class="md:hidden p-2 text-text-secondary hover:text-primary"
+        aria-label="菜单"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 移动端菜单 -->
+    <nav id="mobile-menu" class="hidden md:hidden pb-4 border-t border-border pt-3">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="block px-3 py-2.5 text-sm text-text-secondary hover:text-primary hover:bg-bg-light rounded"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>
