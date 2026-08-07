@@ -1,19 +1,21 @@
 ---
+const BASE = import.meta.env.BASE_URL;
+
 const navItems = [
-  { label: "公司概况", href: "/about" },
-  { label: "科学研发", href: "/research" },
-  { label: "产品管线", href: "/pipeline" },
-  { label: "新闻中心", href: "/news" },
-  { label: "对外合作", href: "/cooperation" },
-  { label: "招贤纳士", href: "/careers" },
-  { label: "联系我们", href: "/contact" },
+  { label: "公司概况", href: `${BASE}about` },
+  { label: "科学研发", href: `${BASE}research` },
+  { label: "产品管线", href: `${BASE}pipeline` },
+  { label: "新闻中心", href: `${BASE}news` },
+  { label: "对外合作", href: `${BASE}cooperation` },
+  { label: "招贤纳士", href: `${BASE}careers` },
+  { label: "联系我们", href: `${BASE}contact` },
 ];
 ---
 
 <header class="sticky top-0 z-50 bg-white border-b border-border">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-3">
+      <a href={BASE} class="flex items-center gap-3">
         <span class="text-xl font-bold text-primary tracking-wide">公司名称</span>
       </a>
 

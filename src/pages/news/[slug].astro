@@ -2,6 +2,8 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
+const BASE = import.meta.env.BASE_URL;
+
 export async function getStaticPaths() {
   const newsItems = await getCollection("news");
   return newsItems.map((item) => ({
@@ -33,7 +35,7 @@ const { Content } = await render(item);
     </div>
 
     <div class="mt-12 pt-6 border-t border-border">
-      <a href="/news" class="text-accent hover:text-accent-light text-sm">
+      <a href={`${BASE}news`} class="text-accent hover:text-accent-light text-sm">
         ← 返回新闻中心
       </a>
     </div>

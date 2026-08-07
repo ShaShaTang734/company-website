@@ -1,22 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const BASE = import.meta.env.BASE_URL;
+
 const advantages = [
-  {
-    icon: "🔬",
-    title: "前沿科研平台",
-    desc: "国际领先的研发设施，覆盖药物发现全流程。",
-  },
-  {
-    icon: "💊",
-    title: "丰富产品管线",
-    desc: "多款创新药物处于不同临床阶段，覆盖重大疾病领域。",
-  },
-  {
-    icon: "🤝",
-    title: "全球合作网络",
-    desc: "与国内外顶尖科研机构和药企建立了深度合作。",
-  },
+  { icon: "🔬", title: "前沿科研平台", desc: "国际领先的研发设施，覆盖药物发现全流程。" },
+  { icon: "💊", title: "丰富产品管线", desc: "多款创新药物处于不同临床阶段，覆盖重大疾病领域。" },
+  { icon: "🤝", title: "全球合作网络", desc: "与国内外顶尖科研机构和药企建立了深度合作。" },
 ];
 
 const recentNews = [
@@ -62,7 +52,7 @@ const recentNews = [
       <div class="space-y-1">
         {recentNews.map((item) => (
           <a
-            href="/news"
+            href={`${BASE}news`}
             class="flex justify-between items-center py-3 border-b border-border text-text-secondary hover:text-primary transition-colors"
           >
             <span>{item.title}</span>
@@ -71,7 +61,7 @@ const recentNews = [
         ))}
       </div>
       <div class="mt-6">
-        <a href="/news" class="text-sm text-accent hover:text-accent-light">
+        <a href={`${BASE}news`} class="text-sm text-accent hover:text-accent-light">
           查看更多 →
         </a>
       </div>
