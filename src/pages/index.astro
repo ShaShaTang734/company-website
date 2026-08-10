@@ -4,30 +4,42 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const BASE = import.meta.env.BASE_URL;
 
 const advantages = [
-  { icon: "🔬", title: "前沿科研平台", desc: "国际领先的研发设施，覆盖药物发现全流程。" },
-  { icon: "💊", title: "丰富产品管线", desc: "多款创新药物处于不同临床阶段，覆盖重大疾病领域。" },
-  { icon: "🤝", title: "全球合作网络", desc: "与国内外顶尖科研机构和药企建立了深度合作。" },
+  {
+    icon: "🧠",
+    title: "脑机接口",
+    desc: "以脑机接口为终极目标，开发新一代神经界面材料，实现人脑与机器的无缝连接。",
+  },
+  {
+    icon: "💧",
+    title: "高性能水凝胶",
+    desc: "具备优异的生物相容性、导电性和力学性能，广泛应用于神经电极、组织工程等领域。",
+  },
+  {
+    icon: "🔗",
+    title: "智能弹性体",
+    desc: "自主研发高拉伸、自修复弹性体材料，为柔性电子和可穿戴设备提供核心材料方案。",
+  },
 ];
 
 const recentNews = [
-  { title: "公司某某新药获批进入临床III期试验", date: "2026-07-15" },
-  { title: "公司与某某大学签署战略合作协议", date: "2026-06-28" },
-  { title: "公司获得某某投资机构新一轮融资", date: "2026-06-10" },
+  { title: "公司完成高性能导电水凝胶中试放大验证", date: "2026-07-20" },
+  { title: "栩脉智慧与江苏省化学工业园区达成战略合作", date: "2026-06-15" },
+  { title: "公司水凝胶产品通过生物相容性第三方检测认证", date: "2026-05-28" },
 ];
 ---
 
 <BaseLayout
-  title="公司名称 — 专注生物医药创新研发"
-  description="公司名称是一家专注于生物医药创新研发的高科技企业，致力于为全球患者提供高质量的医疗解决方案。"
+  title="扬州栩脉智慧科技有限公司 — 高性能水凝胶与弹性体材料引领者"
+  description="扬州栩脉智慧科技有限公司专注于高性能水凝胶与弹性体材料的研发与产业化，以脑机接口为终极目标，致力于成为全球领先的生物界面材料供应商。"
 >
   <!-- Hero -->
   <section class="bg-primary text-white">
     <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
       <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-2xl">
-        以创新驱动生命科学进步
+        连接大脑，智启未来
       </h1>
       <p class="mt-6 text-lg md:text-xl text-white/70 max-w-xl leading-relaxed">
-        专注于生物医药创新研发，致力于为全球患者提供高质量的医疗解决方案。
+        以高性能弹性体与水凝胶材料为核心，致力于脑机接口关键技术的创新突破。
       </p>
     </div>
   </section>
