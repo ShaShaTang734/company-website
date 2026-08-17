@@ -23,8 +23,13 @@ const { Content } = await render(job);
     <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
       <p class="text-white/60 text-sm mb-1">
         {job.data.department} · {job.data.location} · {job.data.type}
+        {job.data.education ? ` · ${job.data.education}` : ""}
+        {job.data.experience ? ` · ${job.data.experience}` : ""}
       </p>
       <h1 class="text-2xl md:text-3xl font-bold">{job.data.title}</h1>
+      {job.data.salary && (
+        <p class="text-white/80 mt-2 text-lg font-medium">{job.data.salary}</p>
+      )}
     </div>
   </section>
 

@@ -30,6 +30,9 @@ const jobsCollection = defineCollection({
     location: z.string(),
     date: z.coerce.date(),
     type: z.enum(["全职", "兼职", "实习"]).default("全职"),
+    education: z.string().optional(),
+    experience: z.string().optional(),
+    salary: z.string().optional(),
   }),
 });
 
